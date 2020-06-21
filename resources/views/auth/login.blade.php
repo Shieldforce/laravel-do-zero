@@ -12,7 +12,7 @@
                     @csrf
                     <div class="input-group mb-3">
                         <label for="email"></label>
-                        <input type="email" class="form-control @error("email") has-error @enderror" name="email" id="email" value="{{ old("email") ?? "" }}" placeholder="Email">
+                        <input type="email" class="form-control @error("email") has-error @enderror" name="email" id="email" value="{{ old("email") ?? "" }}" placeholder="E-mail">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -25,7 +25,7 @@
                     @enderror
                     <div class="input-group mb-3">
                         <label for="password"></label>
-                        <input type="password" class="form-control @error("password") has-error @enderror" name="password" id="password" placeholder="Password">
+                        <input type="password" class="form-control @error("password") has-error @enderror" name="password" id="password" placeholder="Senha">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
