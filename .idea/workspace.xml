@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="506ab29c-3bcb-44bc-b383-adb40e3bc98f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-do-zero.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-do-zero.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -115,9 +118,11 @@
       <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
       <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
       <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
       <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
     </include_path>
   </component>
   <component name="ProjectId" id="1dYRAHyRzfaI2jZq04XremW6p53" />
@@ -128,11 +133,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="sshConsole" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -152,6 +159,7 @@
       <updated>1592599894027</updated>
       <workItem from="1592599895687" duration="3000" />
       <workItem from="1592599916388" duration="3173000" />
+      <workItem from="1608856960364" duration="352000" />
     </task>
     <servers />
   </component>
@@ -159,25 +167,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="184" key="#Composer" timestamp="1592600093509">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1608857022757">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="184" key="#Composer/1920.0.900.1410/-2560.0.2560.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1592600093509" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1592600096945">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/1920.0.900.1410/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608857022757" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1608857022756">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/1920.0.900.1410/-2560.0.2560.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1592600096945" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1592600096945">
+    <state width="1877" height="285" key="GridCell.Tab.0.center/1920.0.900.1410/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608857022756" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1608857022756">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.center/1920.0.900.1410/-2560.0.2560.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1592600096945" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1592600096945">
+    <state width="1877" height="285" key="GridCell.Tab.0.left/1920.0.900.1410/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608857022756" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1608857022757">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.left/1920.0.900.1410/-2560.0.2560.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1592600096945" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1592600096945">
+    <state width="1877" height="285" key="GridCell.Tab.0.right/1920.0.900.1410/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608857022757" />
+    <state x="461" y="168" key="SettingsEditor" timestamp="1608856993624">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.right/1920.0.900.1410/-2560.0.2560.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1592600096945" />
+    <state x="461" y="168" key="SettingsEditor/1920.0.900.1410/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608856993624" />
   </component>
 </project>
