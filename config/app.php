@@ -175,6 +175,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        # Insert ServiceProvider AutoValidation
+        \ShieldForce\AutoValidation\Providers\AutoValidationServiceProvider::class,
+
     ],
 
     /*

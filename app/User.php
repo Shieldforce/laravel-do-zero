@@ -4,11 +4,40 @@ namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
+use ShieldForce\AutoValidation\Traits\TraitStartInterception;
 
 class User extends Authenticatable
 {
     use Notifiable;
+
+    //-------- Insert Trait + Method rulesCustom -----------//
+    use TraitStartInterception;
+    public static function rulesCustom(Request $request)
+    {
+        return
+            [
+                "request"    => $request,
+                "creating"   =>
+                    [
+                        "validations" =>
+                        [
+                            "first_name"    => ["required", "string", "max:50"],
+                            "last_name"     => ["required", "string", "max:50"],
+                            "email"         => ["required", "string", "email", "max:100", "unique:users"],
+                            "password"      => ["required", "string", "min:4", "confirmed"],
+                            "teste"         => ["required"],
+                        ],
+                        "messages" =>
+                            [
+                                "first_name.required" => "Primeiro nome é obritatório",
+                                "last_name.required"  => ":attribute nome é obritatório",
+                            ]
+                    ]
+            ];
+    }
+    //-------- Insert Trait + Method Rules -----------//
 
     /**
      * The attributes that are mass assignable.
