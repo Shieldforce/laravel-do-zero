@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="506ab29c-3bcb-44bc-b383-adb40e3bc98f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Auth-Panel/dist/css/ionicons.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/Auth-Panel/dist/css/ionicons.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/main/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/main/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/template/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/template/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +40,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="dev" />
-                    <option name="lastUsedInstant" value="1592664953" />
+                    <option name="lastUsedInstant" value="1608857496" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
@@ -159,6 +159,8 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
       <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
     </include_path>
   </component>
   <component name="ProjectId" id="1dYRAHyRzfaI2jZq04XremW6p53" />
@@ -175,7 +177,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../federal-appc" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Errors" />
@@ -215,6 +217,8 @@
       <workItem from="1592664654404" duration="9166000" />
       <workItem from="1592689090920" duration="148000" />
       <workItem from="1592748677391" duration="1568000" />
+      <workItem from="1608858378084" duration="3090000" />
+      <workItem from="1608873096486" duration="753000" />
     </task>
     <servers />
   </component>
@@ -222,41 +226,13 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="184" key="#Composer" timestamp="1592600093509">
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1608859682132">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="184" key="#Composer/1920.0.900.1410/-2560.0.2560.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1592600093509" />
-    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1592685588027">
+    <state x="740" y="280" key="FileChooserDialogImpl/1920.0.900.1410/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608859682132" />
+    <state x="794" y="449" key="NewPhpFileDialog" timestamp="1608859532030">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="280" key="FileChooserDialogImpl/1920.0.900.1410/-2560.0.2560.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1592685588027" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1592600096945">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/1920.0.900.1410/-2560.0.2560.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1592600096945" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1592600096945">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.center/1920.0.900.1410/-2560.0.2560.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1592600096945" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1592600096945">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.left/1920.0.900.1410/-2560.0.2560.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1592600096945" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1592600096945">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.right/1920.0.900.1410/-2560.0.2560.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1592600096945" />
-    <state x="794" y="449" key="NewPhpFileDialog" timestamp="1592684997384">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="794" y="449" key="NewPhpFileDialog/1920.0.900.1410/-2560.0.2560.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1592684997384" />
-    <state x="461" y="168" key="SettingsEditor" timestamp="1592685017256">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="461" y="168" key="SettingsEditor/1920.0.900.1410/-2560.0.2560.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1592685017256" />
-    <state x="616" y="178" width="672" height="676" key="search.everywhere.popup" timestamp="1592684172985">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="616" y="178" width="672" height="676" key="search.everywhere.popup/1920.0.900.1410/-2560.0.2560.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1592684172985" />
+    <state x="794" y="449" key="NewPhpFileDialog/1920.0.900.1410/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1608859532030" />
   </component>
 </project>
