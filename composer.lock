@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f0dcbdc80776ca79d6311b8f92c5a4b5",
+    "content-hash": "a6216bb7c4912b181b94665d39dc8f33",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2255,6 +2255,51 @@
                 }
             ],
             "time": "2020-08-18T17:17:46+00:00"
+        },
+        {
+            "name": "shieldforce/package-auto-validation-laravel",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Shieldforce/package-auto-validation-laravel.git",
+                "reference": "74db824ea902c0bb247e42d1d20b9e915787c74f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Shieldforce/package-auto-validation-laravel/zipball/74db824ea902c0bb247e42d1d20b9e915787c74f",
+                "reference": "74db824ea902c0bb247e42d1d20b9e915787c74f",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^7.0",
+                "php": "^7.2.5"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Helpers/FunctionsGlobals.php"
+                ],
+                "psr-4": {
+                    "ShieldForce\\AutoValidation\\": "src/AutoValidation"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexandre Ferreira",
+                    "email": "shieldforce2@gmail.com"
+                }
+            ],
+            "description": "Validacoes de formularios automatizadas",
+            "support": {
+                "issues": "https://github.com/Shieldforce/package-auto-validation-laravel/issues",
+                "source": "https://github.com/Shieldforce/package-auto-validation-laravel/tree/main"
+            },
+            "time": "2020-12-26T00:14:32+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -6925,7 +6970,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "shieldforce/package-auto-validation-laravel": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
