@@ -34,6 +34,18 @@ class User extends Authenticatable
                                 "last_name.required"  => ":attribute nome é obritatório",
                             ]
                     ],
+                "retrieved:login"   =>
+                    [
+                        "validations" =>
+                            [
+                                "email"         => ["required", "string", "email", "max:100"],
+                                "password"      => ["required", "string"],
+                            ],
+                        "messages" =>
+                            [
+                                //
+                            ]
+                    ],
             ];
     }
 
