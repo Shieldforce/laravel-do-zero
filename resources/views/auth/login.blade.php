@@ -10,6 +10,7 @@
                 <p class="login-box-msg">Entre com seus dados!!</p>
                 <form action="{{ route("login") }}" method="post">
                     @csrf
+                    <input type="hidden" name="routeType" value="web">
                     <div class="input-group mb-3">
                         <label for="email"></label>
                         <input type="email" class="form-control" name="email" id="email" value="{{ old("email") ?? "" }}" placeholder="E-mail">

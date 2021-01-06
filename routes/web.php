@@ -1,5 +1,6 @@
 <?php
 
+    use App\Http\Controllers\Panel\UserController;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
     use \App\Http\Controllers\Site\MainController as SiteMain;
@@ -75,6 +76,46 @@
                 ->name("index")
                 ->setWheres([
                     "titleBreadCrumb"    =>  "Página Principal do Painel"
+                ]);
+
+        });
+
+        # Rotas do Controller User
+        Route::name("user.")->group(function (){
+
+            # Rota de Dados do Usuário
+            Route::get('/usuarios/show/{id?}', [ UserController::class, "show" ])
+                ->name("show")
+                ->setWheres([
+                    "titleBreadCrumb"    =>  "Dados do Usuários"
+                ]);
+
+            # Rota de Lista de Usuários
+            Route::get('/usuarios', [ UserController::class, "index" ])
+                ->name("index")
+                ->setWheres([
+                    "titleBreadCrumb"    =>  "Lista de Usuários"
+                ]);
+
+            # Rota de Gravação de Usuários
+            Route::post('/usuarios/cadastro', [ UserController::class, "store" ])
+                ->name("store")
+                ->setWheres([
+                    "titleBreadCrumb"    =>  "Gravação de Usuários"
+                ]);
+
+            # Rota de Edição de Usuários
+            Route::put('/usuarios/edicao', [ UserController::class, "update" ])
+                ->name("update")
+                ->setWheres([
+                    "titleBreadCrumb"    =>  "Edição de Usuários"
+                ]);
+
+            # Rota de Exclusão de Usuários
+            Route::delete('/usuarios/exclusao/{id?}', [ UserController::class, "delete" ])
+                ->name("delete")
+                ->setWheres([
+                    "titleBreadCrumb"    =>  "Exclusão de Usuários"
                 ]);
 
         });
