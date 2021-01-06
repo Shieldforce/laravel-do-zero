@@ -10,6 +10,7 @@
                 <p class="login-box-msg">Digite seus dados para criar sua conta!!!!</p>
                 <form action="{{ route("register") }}" method="post">
                     @csrf
+                    <input type="hidden" name="routeType" value="web">
                     <div class="input-group mb-3">
                         <label for="first_name"></label>
                         <input type="text" class="form-control" name="first_name" id="first_name" value="{{ old("first_name") ?? "" }}" placeholder="Primeiro Nome">

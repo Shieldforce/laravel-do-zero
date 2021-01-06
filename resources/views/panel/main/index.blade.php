@@ -2,7 +2,7 @@
 
 @section("content")
     <div class="content-wrapper">
-        @include("panel.main.breadcrumb")
+        @include("$routeAmbient.$routeCrud.breadcrumb")
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -12,3 +12,6 @@
         </div>
     </div>
 @endsection
+
+@includeIf("$routeAmbient.$routeCrud.Local.$routeMethod.head")
+@includeIf("$routeAmbient.$routeCrud.Local.$routeMethod.javascript")
