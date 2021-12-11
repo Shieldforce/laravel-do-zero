@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Panel;
 
+use App\Models\Role;
+use App\Models\User;
 use App\Repositories\Response\Error;
 use App\Repositories\Response\Success;
-use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+class RoleController extends Controller
 {
 
     protected $request;
@@ -21,7 +22,7 @@ class UserController extends Controller
      *
      * @return void
      */
-    public function __construct(Request $request, User $model)
+    public function __construct(Request $request, Role $model)
     {
         $this->model = $model;
         $this->request = $request;
@@ -44,13 +45,8 @@ class UserController extends Controller
     public function store()
     {
         $create = $this->model->create($this->request->all());
-        $this->request["id"] = $create->id;
-        $create->password = Hash::make($this->request->password);
-        $create->save();
-
         if($create)
         {
-            $create->roles()->sync($this->request->roles_ids ?? [], true);
             return Success::execute(
                 $this->request->routeType ?? "web",
                 200,
@@ -73,13 +69,9 @@ class UserController extends Controller
     public function update()
     {
         $item = $this->model->find($this->request->id);
-        $item->password != $this->request->password ? $this->request["password"] = Hash::make($this->request->password)
-            : $this->request["password"] = $item->password;
         $update = $item->update($this->request->all());
-
         if($update)
         {
-            $item->roles()->sync($this->request->roles_ids ?? [], true);
             return Success::execute(
                 $this->request->routeType ?? "web",
                 200,
@@ -130,6 +122,38 @@ class UserController extends Controller
     public function show($id)
     {
         return response()->json($this->model->find($this->request->id));
+    }
+
+    public function listRolesAjax($method, $user_id=null)
+    {
+        $arrayList = [];
+        $roles = Role::all();
+        if($method=="create")
+        {
+            foreach ($roles as $role)
+            {
+                $arrayList[] = [
+                    "id"       => $role->id,
+                    "text"     => $role->name,
+                    "selected" => "",
+                ];
+            }
+        }
+        if($method=="edit")
+        {
+            $user = User::find($user_id);
+            foreach ($roles as $role)
+            {
+                $arrayList[] = [
+                    "id"       => $role->id,
+                    "text"     => $role->name,
+                    "selected" => $user->roles->contains("id", $role->id) ? "selected" : "",
+                ];
+            }
+        }
+        return response()->json([
+            "list" => $arrayList
+        ]);
     }
 
 }

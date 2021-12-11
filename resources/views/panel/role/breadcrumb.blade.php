@@ -3,8 +3,8 @@
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1 class="m-0 text-dark">{{ $titleBreadCrumb ?? "Sem Título de BreadCrumb" }} |
-                    @can("panel.user.store")
-                        <a class="btn btn-success" data-toggle="modal" data-target="#create-user"><i class="fa fa-plus text-white"></i></a>
+                    @can("panel.role.store")
+                        <a class="btn btn-success" data-toggle="modal" data-target="#create-role"><i class="fa fa-plus text-white"></i></a>
                     @endcan
                 </h1>
             </div>

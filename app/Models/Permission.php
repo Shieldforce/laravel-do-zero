@@ -85,7 +85,7 @@ class Permission extends Authenticatable
         return $this->belongsToMany(
             \App\Models\Role::class,
             "roles_permissions",
-            "permissions_id",
+            "permission_id",
             "role_id"
         )->withoutGlobalScopes();
     }

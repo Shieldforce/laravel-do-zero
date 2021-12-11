@@ -1,17 +1,17 @@
-<div class="modal fade" id="edit-user">
+<div class="modal fade" id="edit-role">
     <div class="modal-dialog">
         <div class="modal-content bg-primary">
             <div class="modal-header">
-                <h4 class="modal-title">Editar Usuário</h4>
+                <h4 class="modal-title">Editar Função</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
             </div>
             <form
-                action="{{ route("panel.user.update") }}"
+                action="{{ route("panel.role.update") }}"
                 onsubmit="event.preventDefault();formRequestAjaxGlobal(this);"
                 method="POST" enctype="multipart/form-data"
-                name="formEditUser"
-                data-id-closed-modal="edit-user"
+                name="formEditRole"
+                data-id-closed-modal="edit-role"
                 data-reload="true"
             >
                 {{ csrf_field() }}
@@ -26,54 +26,40 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="far fa-user"></i></span>
+                                            <span class="input-group-text"><i class="fa fa-list"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" name="first_name" placeholder="Primeiro Nome">
+                                        <input type="text" class="form-control" name="name" placeholder="Digite o nome" value="{{ old("name") ?? "" }}">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="far fa-user"></i></span>
+                                            <span class="input-group-text"><i class="fa fa-list"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" name="last_name" placeholder="Sobrenome">
+                                        <input type="text" class="form-control" name="description" placeholder="Descrição" value="{{ old("description") ?? "" }}">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="far fa-check-circle"></i></span>
+                                            <span class="input-group-text"><i class="fa fa-list"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" name="email" placeholder="E-mail">
+                                        <input type="text" class="form-control" name="group" placeholder="Grupo" value="{{ old("group") ?? "" }}">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                            <span class="input-group-text"><i class="fa fa-list"></i></span>
                                         </div>
-                                        <input type="password" class="form-control" name="password" placeholder="Senha">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fa fa-user-secret"></i></span>
-                                        </div>
-                                        <select
-                                            class="select2bs4 select2-hidden-accessible roles_ids"
-                                            name="roles_ids[]"
-                                            multiple
-                                            data-placeholder="Selecione Funções"
-                                            data-select2-id="8"
-                                            tabindex="-1"
-                                            aria-hidden="true"
-                                            data-method="edit"
-                                        >
+                                        <select class="form-control" name="type">
+                                            <option value="">Selecione um tipo</option>
+                                            <option value="função">função</option>
+                                            <option value="departamento">departamento</option>
+                                            <option value="outros">outros</option>
                                         </select>
                                     </div>
                                 </div>

@@ -161,16 +161,15 @@
 
         function dataFormEdit(id) {
             $.ajax({
-                url : "usuarios/show/"+id,
+                url : "funcoes/show/"+id,
                 method : "GET",
                 success : function (response) {
-                    var formEditUser = $("form[name=formEditUser]");
-                    formEditUser.find("input[name=id]").val(response.id);
-                    formEditUser.find("input[name=first_name]").val(response.first_name);
-                    formEditUser.find("input[name=last_name]").val(response.last_name);
-                    formEditUser.find("input[name=email]").val(response.email);
-                    formEditUser.find("input[name=password]").val(response.password);
-                    formEditUser.find(".roles_ids").attr("data-user-id",response.id);
+                    var formEditRole = $("form[name=formEditRole]");
+                    formEditRole.find("input[name=id]").val(response.id);
+                    formEditRole.find("input[name=name]").val(response.name);
+                    formEditRole.find("input[name=description]").val(response.description);
+                    formEditRole.find("input[name=group]").val(response.group);
+                    formEditRole.find("select[name=type]").val(response.type);
                     listRolesAjax();
                 },
                 error : function (response) {
@@ -181,14 +180,14 @@
 
         function dataFormDelete(id) {
             $.ajax({
-                url : "usuarios/show/"+id,
+                url : "funcoes/show/"+id,
                 method : "GET",
                 success : function (response) {
-                    var formDeleteUser = $("form[name=formDeleteUser]");
-                    formDeleteUser.attr("action", "/usuarios/exclusao/"+id);
+                    var formDeleteRole = $("form[name=formDeleteRole]");
+                    formDeleteRole.attr("action", "/funcoes/exclusao/"+id);
                 },
                 error : function (response) {
-                    toastError("Ops, Houve um erro!", "Usuário não encontrado!");
+                    toastError("Ops, Houve um erro!", "Função  não encontrado(a)!");
                 },
             });
         }

@@ -36,6 +36,7 @@ class User extends Authenticatable
                                 "email"                      => ["required", "string", "email", "max:100", "unique:users"],
                                 "password"                   => ["required", "string", "min:4", "confirmed"],
                                 "password_confirmation"      => ["required", "string", "min:4"],
+                                "roles_ids"                  => ["required"],
                             ],
                         "messages" =>
                             [
@@ -53,6 +54,7 @@ class User extends Authenticatable
                                 "last_name"                  => ["required", "string", "max:50"],
                                 "email"                      => ["required", "string", "email", "max:100"],
                                 "password"                   => ["required", "string", "min:4"],
+                                "roles_ids"                  => ["required"],
                             ],
                         "messages" =>
                             [
@@ -117,5 +119,24 @@ class User extends Authenticatable
             "user_id",
             "role_id"
         )->withoutGlobalScopes();
+    }
+
+    /**
+     * ACL Functions
+     */
+
+    public function hasPermission(Permission $permission)
+    {
+        return $this->hasAnyRoles($permission->roles);
+    }
+
+    public function hasAnyRoles($roles)
+    {
+        if(is_array($roles) || is_object($roles))
+        {
+            return !! $roles->intersect($this->roles)->count();
+        }
+
+        return $this->roles->contains("name", $roles);
     }
 }

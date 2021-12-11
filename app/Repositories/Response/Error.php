@@ -24,11 +24,22 @@ class Error
             "message"       => $message,
             "data"          => $data,
             "routeRedirect" => $routeRedirect,
-        ]);
+        ])->throwResponse();
     }
 
     public static function returnWeb($code, $message, $data=null, $routeRedirect=null)
     {
+        if($routeRedirect && $code==401)
+        {
+            return redirect()->route($routeRedirect)
+                ->withInput()
+                ->withErrors($data)
+                ->with("status", "error")
+                ->with("code", $code)
+                ->with("error", $message)
+                ->throwResponse();
+        }
+
         if($routeRedirect)
         {
             return redirect()->route($routeRedirect)

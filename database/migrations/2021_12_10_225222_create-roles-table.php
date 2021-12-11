@@ -19,7 +19,7 @@ class CreateRolesTable extends Migration
             $table->string("name");
             $table->string("description");
             $table->string("group");
-            $table->enum("type", ["função", "departamento"]);
+            $table->enum("type", ["função", "departamento", "outros"]);
 
             $table->timestamps();
         });

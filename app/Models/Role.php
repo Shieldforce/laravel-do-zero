@@ -46,11 +46,11 @@ class Role extends Authenticatable
                                 "name"                => ["required"],
                                 "description"         => ["required"],
                                 "group"               => ["required"],
-                                "type"                => ["required"],
+                                "type"                => ["required", "in:função,departamento,outros"],
                             ],
                         "messages" =>
                             [
-                                //
+                                "type.in"  => "No campo tipo só é permitido esses valores: ['função', 'departamento', 'outros']"
                             ]
                     ],
                 "updating"   =>
@@ -60,11 +60,11 @@ class Role extends Authenticatable
                                 "name"                => ["required"],
                                 "description"         => ["required"],
                                 "group"               => ["required"],
-                                "type"                => ["required"],
+                                "type"                => ["required", "in:função,departamento,outros"],
                             ],
                         "messages" =>
                             [
-                                //
+                                "type.in"  => "No campo tipo só é permitido esses valores: ['função', 'departamento', 'outros']"
                             ]
                     ]
             ];
@@ -90,7 +90,7 @@ class Role extends Authenticatable
             \App\Models\Permission::class,
             "roles_permissions",
             "role_id",
-            "permissions_id"
+            "permission_id"
         )->withoutGlobalScopes();
     }
 }

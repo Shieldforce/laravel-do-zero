@@ -21,51 +21,69 @@
                         <div class="card card-danger">
                             <div class="card-body">
 
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="far fa-user"></i></span>
-                                            </div>
-                                            <input type="text" class="form-control" name="first_name" placeholder="Primeiro Nome" value="{{ old("first_name") ?? "" }}">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="far fa-user"></i></span>
                                         </div>
+                                        <input type="text" class="form-control" name="first_name" placeholder="Primeiro Nome" value="{{ old("first_name") ?? "" }}">
                                     </div>
+                                </div>
 
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="far fa-user"></i></span>
-                                            </div>
-                                            <input type="text" class="form-control" name="last_name" placeholder="Sobrenome" value="{{ old("last_name") ?? "" }}">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="far fa-user"></i></span>
                                         </div>
+                                        <input type="text" class="form-control" name="last_name" placeholder="Sobrenome" value="{{ old("last_name") ?? "" }}">
                                     </div>
+                                </div>
 
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="far fa-check-circle"></i></span>
-                                            </div>
-                                            <input type="text" class="form-control" name="email" placeholder="E-mail" value="{{ old("email") ?? "" }}">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="far fa-check-circle"></i></span>
                                         </div>
+                                        <input type="text" class="form-control" name="email" placeholder="E-mail" value="{{ old("email") ?? "" }}">
                                     </div>
+                                </div>
 
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                                            </div>
-                                            <input type="password" class="form-control" name="password" placeholder="Senha">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
                                         </div>
+                                        <input type="password" class="form-control" name="password" placeholder="Senha">
                                     </div>
+                                </div>
 
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                                            </div>
-                                            <input type="password" class="form-control" name="password_confirmation" placeholder="Repita a senha">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
                                         </div>
+                                        <input type="password" class="form-control" name="password_confirmation" placeholder="Repita a senha">
                                     </div>
+                                </div>
 
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-user-secret"></i></span>
+                                        </div>
+                                        <select
+                                            class="select2bs4 select2-hidden-accessible roles_ids"
+                                            name="roles_ids[]"
+                                            multiple
+                                            data-placeholder="Selecione Funções"
+                                            data-select2-id="7"
+                                            tabindex="-1"
+                                            aria-hidden="true"
+                                            data-method="create"
+                                        >
+                                        </select>
+                                    </div>
+                                </div>
 
                             </div>
                         </div>

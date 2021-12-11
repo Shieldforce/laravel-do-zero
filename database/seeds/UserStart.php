@@ -13,25 +13,28 @@
      */
     public function run()
     {
-        $user1 = User::create([
-            "first_name"    => "User",
-            "last_name"     => "Primeiro",
-            "email"         => "user1@user1",
-            "password"      => Hash::make("user1"),
+        $administrator = User::create([
+            "first_name"    => "Administrator",
+            "last_name"     => "SuperAdmin",
+            "email"         => "admin@admin",
+            "password"      => Hash::make("admin"),
         ]);
+        $administrator->roles()->sync([1], true);
+
+        $user1 = User::create([
+            "first_name"    => "UserN1",
+            "last_name"     => "UserN1",
+            "email"         => "usern1@usern1",
+            "password"      => Hash::make("usern1"),
+        ]);
+        $user1->roles()->sync([2], true);
 
         $user2 = User::create([
-            "first_name"    => "User",
+            "first_name"    => "UserN2",
             "last_name"     => "Segundo",
-            "email"         => "user2@user2",
-            "password"      => Hash::make("user2"),
+            "email"         => "usern2@usern2",
+            "password"      => Hash::make("usern2"),
         ]);
-
-        $user3 = User::create([
-            "first_name"    => "User",
-            "last_name"     => "Terceiro",
-            "email"         => "user3@user3",
-            "password"      => Hash::make("user3"),
-        ]);
+        $user2->roles()->sync([3,4], true);
     }
 }

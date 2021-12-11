@@ -17,8 +17,76 @@
                 @endforeach
             ] ,
             icon      : 'error' ,
-            hideAfter : false ,
+            hideAfter : 4000 ,
             position  : 'top-right' ,
-        } )
+        } );
     </script>
 @endif
+
+<script>
+
+    @if(session("error"))
+    toastError("Ops, Houve um erro!", "{{ session("error") }}");
+    @endif
+
+    @if(session("success"))
+    toastSuccess("Sucesso!", "{{ session("success") }}");
+    @endif
+
+    function toastSuccess(title, text, stack) {
+        $.toast( {
+            heading   : title ,
+            text      : text ,
+            icon      : 'success' ,
+            hideAfter : 4000 ,
+            position  : 'top-right' ,
+            allowToastClose: true,
+            showHideTransition : 'slide', // slide | fade | plain
+            loader: true,
+            loaderBg: '#9EC600',
+            //stack: 5,
+            stack   : stack ,
+            bgColor: false,
+            textColor: false,
+            textAlign: 'left',
+        } );
+    }
+
+    function toastError(title, text, stack) {
+        $.toast( {
+            heading   : title ,
+            text      : text ,
+            icon      : 'error' ,
+            hideAfter : 4000 ,
+            position  : 'top-right' ,
+            allowToastClose: true,
+            showHideTransition : 'slide', // slide | fade | plain
+            loader: true,
+            loaderBg: '#9EC600',
+            //stack: 5,
+            stack   : stack ,
+            bgColor: false,
+            textColor: false,
+            textAlign: 'left',
+        } );
+    }
+
+    function toastInfo(title, text, stack) {
+        $.toast( {
+            heading   : title ,
+            text      : text ,
+            icon      : 'info' ,
+            hideAfter : 4000 ,
+            position  : 'top-right' ,
+            allowToastClose: true,
+            showHideTransition : 'slide', // slide | fade | plain
+            loader: true,
+            loaderBg: '#9EC600',
+            //stack: 5,
+            stack   : stack ,
+            bgColor: false,
+            textColor: false,
+            textAlign: 'left',
+        } );
+    }
+</script>
