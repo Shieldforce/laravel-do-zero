@@ -5,15 +5,23 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use ShieldForce\AutoValidation\Traits\TraitStartInterception;
 use Illuminate\Http\Request;
 
 class User extends Authenticatable
 {
+
     use Notifiable;
 
-    use TraitStartInterception;
+    public static function boot()
+    {
+        parent::boot();
+        self::observe(new \ShieldForce\AutoValidation\Observers\InterceptObserversModel());
+    }
 
+    /**
+     * @param Request $request
+     * @return array
+     */
     public static function rulesCustom(Request $request)
     {
         return
@@ -95,4 +103,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /**
+     * Relations
+     */
+
+    public function roles()
+    {
+        return $this->belongsToMany(
+            \App\Models\Role::class,
+            "roles_users",
+            "user_id",
+            "role_id"
+        )->withoutGlobalScopes();
+    }
 }
