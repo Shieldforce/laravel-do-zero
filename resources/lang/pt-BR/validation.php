@@ -180,6 +180,6 @@ return [
         'birth'                 => 'data de nascimento',
         'district'              => 'bairro',
         'street'                => 'endereço',
-        'number'                => 'número',
+        'number'                => 'número'
     ],
 ];

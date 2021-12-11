@@ -192,5 +192,58 @@
             });
         }
 
+        function formRequestAjaxGlobal(element)
+        {
+            var elementHTML = $(element);
+            var idModal     = elementHTML.attr("data-id-closed-modal");
+            $.ajax({
+                url     : elementHTML.attr("action"),
+                method  : elementHTML.attr("method"),
+                data    : elementHTML.serialize(),
+                success : function (response){
+                    if(response.status==="success")
+                    {
+                        toastSuccess("Sucesso!", response.message);
+                        setTimeout(function (){
+                            if(idModal)
+                            {
+                                $("#"+idModal).modal("hide");
+                            }
+                        }, 4000);
+                        if(elementHTML.attr("data-reload") && elementHTML.attr("data-reload")==="true")
+                        {
+                            setTimeout(function (){
+                                location.reload();
+                            }, 4000);
+                            return;
+                        }
+                        if(response.routeRedirect)
+                        {
+                            setTimeout(function (){
+                                location.href = response.routeRedirect;
+                            }, 4000);
+                            return;
+                        }
+                        return;
+                    }
+                    toastError("Ops!", response.message);
+                },
+                error   : function (response){
+                    if(response.responseJSON.message && response.responseJSON.message==="Validação de Campos não passou!!")
+                    {
+                        toastError("Ops!", response.responseJSON.message, 20);
+                        if(response.responseJSON.data.errorValidation)
+                        {
+                            $.each(response.responseJSON.data.errorValidation, function (index, arrayError){
+                                $.each(arrayError, function (index2, error){
+                                    toastError("Atenção", " no campo ("+index+"): "+error, 20);
+                                });
+                            });
+                        }
+                    }
+                },
+            })
+        }
+
     </script>
 @endsection

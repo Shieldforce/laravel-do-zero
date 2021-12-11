@@ -6,9 +6,16 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
             </div>
-            <form action="{{ route("panel.user.store") }}" method="POST" enctype="multipart/form-data">
+            <form
+                action="{{ route("panel.user.store") }}"
+                onsubmit="event.preventDefault();formRequestAjaxGlobal(this);"
+                method="POST"
+                enctype="multipart/form-data"
+                data-id-closed-modal="create-user"
+                data-reload="true"
+            >
                 {{ csrf_field() }}
-                <input type="hidden" name="routeType" value="web">
+                <input type="hidden" name="routeType" value="api">
                 <div class="modal-body">
                     <div class="col-md-12">
                         <div class="card card-danger">

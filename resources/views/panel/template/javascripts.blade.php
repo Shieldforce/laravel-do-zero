@@ -20,7 +20,7 @@
                 @endforeach
             ] ,
             icon      : 'error' ,
-            hideAfter : false ,
+            hideAfter : 4000 ,
             position  : 'top-right' ,
         } );
     </script>
@@ -36,33 +36,60 @@
         toastSuccess("Sucesso!", "{{ session("success") }}");
     @endif
 
-    function toastSuccess(title, text) {
+    function toastSuccess(title, text, stack) {
         $.toast( {
             heading   : title ,
             text      : text ,
             icon      : 'success' ,
-            hideAfter : false ,
+            hideAfter : 4000 ,
             position  : 'top-right' ,
+            allowToastClose: true,
+            showHideTransition : 'slide', // slide | fade | plain
+            loader: true,
+            loaderBg: '#9EC600',
+            //stack: 5,
+            stack   : stack ,
+            bgColor: false,
+            textColor: false,
+            textAlign: 'left',
         } );
     }
 
-    function toastError(title, text) {
+    function toastError(title, text, stack) {
         $.toast( {
             heading   : title ,
             text      : text ,
             icon      : 'error' ,
-            hideAfter : false ,
+            hideAfter : 4000 ,
             position  : 'top-right' ,
+            allowToastClose: true,
+            showHideTransition : 'slide', // slide | fade | plain
+            loader: true,
+            loaderBg: '#9EC600',
+            //stack: 5,
+            stack   : stack ,
+            bgColor: false,
+            textColor: false,
+            textAlign: 'left',
         } );
     }
 
-    function toastInfo(title, text) {
+    function toastInfo(title, text, stack) {
         $.toast( {
             heading   : title ,
             text      : text ,
             icon      : 'info' ,
-            hideAfter : false ,
+            hideAfter : 4000 ,
             position  : 'top-right' ,
+            allowToastClose: true,
+            showHideTransition : 'slide', // slide | fade | plain
+            loader: true,
+            loaderBg: '#9EC600',
+            //stack: 5,
+            stack   : stack ,
+            bgColor: false,
+            textColor: false,
+            textAlign: 'left',
         } );
     }
 </script>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -41,6 +41,10 @@ class User extends Authenticatable
                         "validations" =>
                             [
                                 "id"                         => ["required"],
+                                "first_name"                 => ["required", "string", "max:50"],
+                                "last_name"                  => ["required", "string", "max:50"],
+                                "email"                      => ["required", "string", "email", "max:100"],
+                                "password"                   => ["required", "string", "min:4"],
                             ],
                         "messages" =>
                             [

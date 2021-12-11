@@ -6,10 +6,17 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
             </div>
-            <form action="{{ route("panel.user.update") }}" method="POST" enctype="multipart/form-data" name="formEditUser">
+            <form
+                action="{{ route("panel.user.update") }}"
+                onsubmit="event.preventDefault();formRequestAjaxGlobal(this);"
+                method="POST" enctype="multipart/form-data"
+                name="formEditUser"
+                data-id-closed-modal="edit-user"
+                data-reload="false"
+            >
                 {{ csrf_field() }}
                 <input type="hidden" name="_method" value="PUT" />
-                <input type="hidden" name="routeType" value="web">
+                <input type="hidden" name="routeType" value="api">
                 <input type="hidden" name="id">
                 <div class="modal-body">
                     <div class="col-md-12">

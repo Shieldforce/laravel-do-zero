@@ -6,10 +6,17 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
             </div>
-            <form method="POST" enctype="multipart/form-data" name="formDeleteUser">
+            <form
+                method="POST"
+                enctype="multipart/form-data"
+                name="formDeleteUser"
+                onsubmit="event.preventDefault();formRequestAjaxGlobal(this);"
+                data-id-closed-modal="delete-user"
+                data-reload="true"
+            >
                 {{ csrf_field() }}
                 <input type="hidden" name="_method" value="DELETE" />
-                <input type="hidden" name="routeType" value="web">
+                <input type="hidden" name="routeType" value="api">
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-outline-light" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-outline-light">Deletar</button>

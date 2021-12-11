@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Panel;
 
-use App\User;
+use App\Repositories\Response\Error;
+use App\Repositories\Response\Success;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -37,7 +39,7 @@ class UserController extends Controller
     }
 
     /**
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
      */
     public function store()
     {
@@ -47,13 +49,21 @@ class UserController extends Controller
         $create->save();
 
         if($create)
-            return redirect()
-                ->route("panel.user.index")
-                ->with("success", "Usuário criado com sucesso!");
+        {
+            return Success::execute(
+                $this->request->routeType ?? "web",
+                200,
+                "Criado com sucesso!",
+                $create
+            );
+        }
 
-        return back()
-            ->withInput()
-            ->with("error", "Erro ao criar usuário!");
+        return Error::execute(
+            $this->request->routeType ?? "web",
+            500,
+            "Erro criar!",
+            null
+        );
     }
 
     /**
@@ -62,16 +72,27 @@ class UserController extends Controller
     public function update()
     {
         $item = $this->model->find($this->request->id);
-        $item->password != $this->request->password ? $this->request["password"] = Hash::make($this->request->password) : null;
+        $item->password != $this->request->password ? $this->request["password"] = Hash::make($this->request->password)
+            : $this->request["password"] = $item->password;
         $update = $item->update($this->request->all());
 
         if($update)
-            return back()
-                ->with("success", "Usuário editado com sucesso!");
+        {
+            return Success::execute(
+                $this->request->routeType ?? "web",
+                200,
+                "Editado com sucesso!",
+                $item,
+                route("panel.main.index")
+            );
+        }
 
-        return back()
-            ->withInput()
-            ->with("error", "Erro ao editar usuário!");
+        return Error::execute(
+            $this->request->routeType ?? "web",
+            500,
+            "Erro editar!",
+            null
+        );
     }
 
     /**
@@ -80,16 +101,25 @@ class UserController extends Controller
      */
     public function delete($id)
     {
-        $item = $this->model->find($this->request->id);
+        $item = $this->model->find($id);
         $delete = $item->delete();
 
         if($delete)
-            return back()
-                ->with("success", "Usuário delete com sucesso!");
+        {
+            return Success::execute(
+                $this->request->routeType ?? "web",
+                200,
+                "Excluído com sucesso!",
+                $item
+            );
+        }
 
-        return back()
-            ->withInput()
-            ->with("error", "Erro ao deletar usuário!");
+        return Error::execute(
+            $this->request->routeType ?? "web",
+            500,
+            "Erro excluir!",
+            null
+        );
     }
 
     /**
