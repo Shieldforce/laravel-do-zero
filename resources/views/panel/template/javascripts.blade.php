@@ -5,6 +5,13 @@
 <script src="{{ asset("Auth-Panel/dist/js/demo.js") }}"></script>
 <script src="{{ asset("Auth-Panel/dist/js/pages/dashboard3.js") }}"></script>
 <script src="{{ asset("Auth-Panel/plugins/select2/js/select2.full.min.js") }}"></script>
+<script src="{{ asset("Auth-Panel/plugins/bootstrap-switch/js/bootstrap-switch.min.js") }}"></script>
+
+<script>
+    $("input[data-bootstrap-switch]").each(function(){
+        $(this).bootstrapSwitch('state', $(this).prop('checked'));
+    })
+</script>
 
 {{-- Include Toast CSS and JS --}}
 <link rel="stylesheet" href="/vendor/shieldforce/package-auto-validation-laravel/public/plugins/toast/toast.css">
@@ -181,9 +188,74 @@
         })
     }
 
+    function listGroupAndPermissions(element, method)
+    {
+        var elementHTML = $(element);
+        var idRole      = null;
+        if(elementHTML.attr("data-role-id")){idRole = elementHTML.attr("data-role-id")}
+        $.ajax({
+            url     : "/permissoes/listGroupAndPermissions/"+method+"/"+idRole,
+            method  : "GET",
+            success : function (response){
+                var htmlGroups = "";
+                var listDynamicPermissions = $(".listDynamicPermissions");
+                if(response.list){listDynamicPermissions.html("")}
+                $.each(response.list, function (index, group)
+                {
+                    var htmlPermissions = "";
+                    $.each(group, function (index2, permission)
+                    {
+                        htmlPermissions += "" +
+                            "<div class='row mb-1'>"+
+                            "<div class='col-12'>"+
+                            "<div class='row'>"+
+                            "<div class='col-4'>"+
+                            "<div class='bootstrap-switch-container' style='width: 126px; margin-left: 0px;'>"+
+                            "<input " +
+                            "type='checkbox' " +
+                            "name='permissions_ids[]' " +
+                            "class='permissions_ids' " +
+                            "" + (permission.default===1 ? 'checked="on"' : '') + "" +
+                            "data-bootstrap-switch='' " +
+                            "data-off-color='danger' " +
+                            "data-on-color='success' " +
+                            " value='"+permission.id+"'" +
+                            ">"+
+                            "</div>"+
+                            "</div>"+
+                            "<div class='col-8'>"+permission.name+"</div>"+
+                            "</div>"+
+                            "</div>"+
+                            "</div>";
+                    })
+                    htmlGroups += "" +
+                        "<div class='col-6'>"+index+""+
+                        "<hr>"+htmlPermissions+""+
+                        "<hr>"+
+                        "</div>";
+                })
+                listDynamicPermissions.html(htmlGroups);
+                $("input[data-bootstrap-switch]").each(function(){
+                    $(this).bootstrapSwitch('state', $(this).prop('checked'));
+                })
+
+            },
+            error   : function (response){
+                console.log(response);
+            },
+        })
+    }
+
     $(document).ready(function (){
         listRolesAjax();
     })
+
+    function closedModalElement(element)
+    {
+        var elementHTML = $(element);
+        var idModal     = elementHTML.attr("data-id-modal");
+        $("#"+idModal).modal("hide");
+    }
 
 
 </script>

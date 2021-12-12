@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Panel\PermissionController;
 use App\Http\Controllers\Panel\RoleController;
 use App\Http\Controllers\Panel\UserController;
     use Illuminate\Support\Facades\Auth;
@@ -82,7 +83,8 @@ use App\Http\Controllers\Panel\UserController;
                         "group_icon"         => "fa fa-tachometer-alt",
                         "menu"               => 1,
                         "icon"               => "fa fa-home",
-                        "roles_ids"          => "all" // Passar ids que serão permitidos | all | null
+                        "roles_ids"          => "all", // Passar ids que serão permitidos | all | null
+                        "default"            => 1
                     ]);
 
             });
@@ -224,6 +226,23 @@ use App\Http\Controllers\Panel\UserController;
                         "group_icon"         => "fa fa-cogs",
                         "menu"               => 0,
                         "icon"               => "fa fa-lock",
+                        "roles_ids"          => "all" // Passar ids que serão permitidos | all | null
+                    ]);
+
+            });
+
+            # Rotas do Controller Permissions
+            Route::name("permission.")->group(function (){
+
+                # Rota de Lista de Permissões e Grupos
+                Route::get('/permissoes/listGroupAndPermissions/{method?}/{role_id?}', [ PermissionController::class, "listGroupAndPermissions" ])
+                    ->name("listGroupAndPermissions")
+                    ->setWheres([
+                        "titleBreadCrumb"    => "Lista de Grupo e Permissões",
+                        "group"              => "Permissões",
+                        "group_icon"         => "fa fa-cogs",
+                        "menu"               => 0,
+                        "icon"               => "fa fa-list",
                         "roles_ids"          => "all" // Passar ids que serão permitidos | all | null
                     ]);
 

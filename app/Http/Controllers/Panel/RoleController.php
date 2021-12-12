@@ -47,6 +47,7 @@ class RoleController extends Controller
         $create = $this->model->create($this->request->all());
         if($create)
         {
+            $create->permissions()->sync($this->request->permissions_ids ?? [], true);
             return Success::execute(
                 $this->request->routeType ?? "web",
                 200,

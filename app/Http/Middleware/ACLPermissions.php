@@ -93,6 +93,7 @@ class ACLPermissions
                         'group_icon'   => $routeAllow->wheres["group_icon"],
                         'menu'         => $routeAllow->wheres["menu"],
                         'icon'         => $routeAllow->wheres["icon"],
+                        'default'      => $routeAllow->wheres["default"] ?? 0,
                     ]
                 );
                 if($permissionUpdateOrCreate)

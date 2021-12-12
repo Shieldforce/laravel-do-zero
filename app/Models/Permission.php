@@ -24,6 +24,7 @@ class Permission extends Authenticatable
         'group_icon',
         'menu',
         'icon',
+        'default',
     ];
 
     public static function boot()

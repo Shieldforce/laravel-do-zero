@@ -62,6 +62,23 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-user-secret"></i></span>
+                                        </div>
+                                        <a
+                                            href="javascript:;"
+                                            class="btn btn-warning ml-2"
+                                            data-toggle="modal" data-target="#sync-create-roles-permissions"
+                                            onclick="listGroupAndPermissions(this, 'create');"
+                                        >
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                    </div>
+                                    @includeIf("panel.role.Local.index.modals.sync-create-roles-permissions")
+                                </div>
+
                             </div>
                         </div>
                     </div>

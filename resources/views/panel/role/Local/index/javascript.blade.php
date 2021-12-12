@@ -4,6 +4,7 @@
     <script src="{{ asset("Auth-Panel/plugins/datatables-responsive/js/dataTables.responsive.min.js") }}"></script>
     <script src="{{ asset("Auth-Panel/plugins/datatables-responsive/js/responsive.bootstrap4.min.js") }}"></script>
     <script>
+
         $(function () {
             $("#example1").DataTable({
                 "paging": true,
@@ -170,7 +171,7 @@
                     formEditRole.find("input[name=description]").val(response.description);
                     formEditRole.find("input[name=group]").val(response.group);
                     formEditRole.find("select[name=type]").val(response.type);
-                    listRolesAjax();
+                    formEditRole.find("button[name=role_id]").attr("data-role-id",response.id);
                 },
                 error : function (response) {
                     toastError("Ops, Houve um erro!", "Usuário não encontrado!");

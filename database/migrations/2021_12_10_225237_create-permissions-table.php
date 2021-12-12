@@ -22,6 +22,7 @@ class CreatePermissionsTable extends Migration
             $table->string("group_icon");
             $table->boolean("menu");
             $table->string("icon");
+            $table->boolean("default")->default(0);
 
             $table->timestamps();
         });

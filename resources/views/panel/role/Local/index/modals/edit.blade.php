@@ -64,6 +64,25 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-user-secret"></i></span>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            name="role_id"
+                                            href="javascript:;"
+                                            class="btn btn-warning ml-2 permissions_ids"
+                                            data-toggle="modal" data-target="#sync-edit-roles-permissions"
+                                            onclick="listGroupAndPermissions(this, 'edit');"
+                                        >
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                    </div>
+                                    @includeIf("panel.role.Local.index.modals.sync-edit-roles-permissions")
+                                </div>
+
                             </div>
                         </div>
                     </div>
